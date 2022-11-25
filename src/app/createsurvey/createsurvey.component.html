@@ -1,0 +1,139 @@
+
+<section class="vh-100 gradient-custom">
+  <button routerLink="/login" class="btn btn-danger m-3">back</button>
+  
+    <div class="container py-5 h-50">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5 w-50">
+        
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-1 mt-md-4 pb-2">
+               <h2 class="fw-bold mb-1 text-uppercase">Create Survey</h2>
+                <form form [formGroup]="form" (ngSubmit)="createsurvey()" (ngSubmit)="createchoicequestion()" >
+
+                  <div class="row">
+                <div class="form-outline form-white mb-4 col">
+                    <label class="form-label" for="firstname">Survey Name</label>
+                    <input input formControlName="surveyname" type="text" id="surveyname" class="form-control form-control-lg"  />
+                    <div *ngIf="f['surveyname'].touched && f['surveyname'].invalid" style="color: red;">
+                      <!-- <div *ngIf="f['surveyname'].errors && f['surveyname'].errors['required']">Survey Name is required.</div> -->
+                  </div> 
+            
+                   
+                  </div>
+                  
+
+                </div>
+                <div class="row">
+                    <div class="form-outline form-white mb-4 col">
+                        <label class="form-label" for="startdate">StartDate</label>
+                        <input input formControlName="startdate" type="date" id="startdate" class="form-control form-control-lg" />
+                        <div *ngIf="f['startdate'].touched && f['startdate'].invalid"  style="color: red;">
+                          <div *ngIf="f['startdate'].errors && f['startdate'].errors['required']">Startdate is required.</div>
+                      </div>
+                        
+                      </div>
+                  <div class="form-outline form-white mb-4 col">
+                    <label class="form-label" for="enddate">EndDate</label>
+                    <input input formControlName="enddate" type="date" id="enddate" class="form-control form-control-lg"  />
+                    <div *ngIf="f['enddate'].touched && f['enddate'].invalid"  style="color: red;">
+                      <div *ngIf="f['enddate'].errors && f['enddate'].errors['required']">Email is required.</div>
+                  </div> 
+                   
+                  </div>
+                  
+                 
+                  
+                  
+
+                </div>
+
+                <!-- <div class="row"> -->
+                    <div class="form-outline form-white mb-4 col">
+                        <label class="form-label" for="question1">Question 1</label>
+                        <input input formControlName="question1" type="text" id="question1" class="form-control form-control-lg" />
+    
+                        
+                      </div>
+                    <div class="form-outline form-white mb-4 col">
+                        <label class="form-label" for="question2">Question 2</label>
+                        <input input formControlName="question2" type="text" id="question2" class="form-control form-control-lg" />
+                       
+                        
+                      </div>
+
+                    <div class="form-outline form-white mb-4 col">
+                        <label class="form-label" for="question3">Question 3</label>
+                        <input input formControlName="question3" type="text" id="question3" class="form-control form-control-lg" />
+                       
+                        
+                      </div>
+
+                      <div class="form-outline form-white mb-4 col">
+                        <label class="form-label" for="question">Choice Question 1</label>
+                        <input input formControlName="question" type="text" id="question" class="form-control form-control-lg" />
+                       
+                        
+                      </div>
+                      <div class="row">
+                      <div class="form-outline form-white mb-4 col">
+                        <label class="form-label" for="choice1">Choice 1</label>
+                        <input input formControlName="choice1" type="text" id="choice1" class="form-control form-control-lg" />
+                        </div>
+                        <div class="form-outline form-white mb-4 col">
+                        <label class="form-label" for="choice2">Choice 2</label>
+                        <input input formControlName="choice2" type="text" id="choice2" class="form-control form-control-lg" />
+                        </div>
+                        <div class="form-outline form-white mb-4 col">
+                        <label class="form-label" for="choice3">Choice 3</label>
+                        <input input formControlName="choice3" type="text" id="choice3" class="form-control form-control-lg" />
+                      </div>
+                      <div class="form-outline form-white mb-4 col">
+                        <label class="form-label" for="choice4">Choice 4</label>
+                        <input input formControlName="choice4" type="text" id="choice4" class="form-control form-control-lg" />
+                      </div>
+                       
+                        
+                      </div>
+                      <!-- <div class="form-outline form-white mb-4 col">
+                        <label class="form-label" for="question2">Choice Question 2</label>
+                        <input input formControlName="question2" type="text" id="question2" class="form-control form-control-lg" />
+                       
+                        
+                      </div>
+                      <div class="row">
+                      <div class="form-outline form-white mb-4 col">
+                        <label class="form-label" for="question2">Choice 1</label>
+                        <input input formControlName="question2" type="text" id="question2" class="form-control form-control-lg" />
+                        </div>
+                        <div class="form-outline form-white mb-4 col">
+                        <label class="form-label" for="question2">Choice 2</label>
+                        <input input formControlName="question2" type="text" id="question2" class="form-control form-control-lg" />
+                        </div>
+                        <div class="form-outline form-white mb-4 col">
+                        <label class="form-label" for="question2">Choice 3</label>
+                        <input input formControlName="question2" type="text" id="question2" class="form-control form-control-lg" />
+                      </div>
+                      <div class="form-outline form-white mb-4 col">
+                        <label class="form-label" for="question2">Choice 4</label>
+                        <input input formControlName="question2" type="text" id="question2" class="form-control form-control-lg" />
+                      </div> -->
+                       
+                        
+                      <!-- </div> -->
+                    <!-- </div> -->
+                
+                <!-- </div> -->
+                  <input type="submit" class="btn btn-primary btn-lg px-5 mt-3" value="Create" [disabled]="!form.valid">
+                </form>
+                </div>
+                </div> 
+                
+              </div> 
+              
+            </div> 
+       </div>  
+
+        </div>   
+      </section>

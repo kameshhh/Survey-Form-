@@ -1,0 +1,57 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-50">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+
+                        <div class="mb-md-1 mt-md-4 pb-2">
+
+                            <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                            <p class="text-white-50 mb-4">Please enter your login and password!</p>
+                            <form [formGroup]="form" (ngSubmit)="userLogin()">
+
+                            <div class="form-outline form-white mb-4">
+                                <label class="form-label" for="typeEmailX">Email</label>
+                                <input formControlName="email"
+                                type="email" class="form-control form-control-lg" id="email" name="email"  />
+                                <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                                    <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+                                </div>
+                        
+                               
+                            </div>
+
+                            <div class="form-outline form-white mb-4">
+                                <label class="form-label" for="typePasswordX">Password</label>
+
+                                <input formControlName="password"
+                                type="password" id="password" name="password" class="form-control form-control-lg" />
+                                <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+                                    <div *ngIf="f['password'].errors && f['password'].errors['required']">Body is required.</div>
+                                </div>
+                        
+                            </div>
+
+                            
+
+                            <input type="submit" class="btn btn-primary btn-lg px-5 mt-3" value="Log In" [disabled]="!form.valid" ><div style="color: red">
+                                {{errroMessage}}
+                            </div>
+                            
+                            </form>
+
+
+                        </div>
+
+                        <div>
+                            <p class="mb-0 mt-4">Don't have an account? <a href="/signup" class="text-white-50 fw-bold">Sign
+                                    Up</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

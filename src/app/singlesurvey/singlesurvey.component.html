@@ -1,0 +1,109 @@
+
+<section class="vh-100 gradient-custom">
+    <button routerLink="/surveypage" class="btn btn-danger m-3">back</button>
+    
+      <div class="container py-5 h-50">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5 w-50">
+          
+            <div class="card fw-bold" style="border-radius: 1rem;">
+              <div class="card-body p-5 text-center">
+                <div class="mb-md-1 mt-md-4 pb-2">
+                 <h2 class="fw-bold mb-1 text-uppercase">Survey Form</h2>
+                  <form form [formGroup]="form" (ngSubmit)="submitsurvey()"  >
+  
+                    <div class="row">
+                       
+                  <div class="form-outline form-white mb-2 mt-3 col">
+                      <label class="form-label" for="firstname">{{surveysingle.surveyname}}</label>
+              
+                     
+                    </div>
+                    
+                    
+  
+                  </div>
+                  <div class="row">
+                      
+                      <div class="form-outline form-white mb-4 col">
+                          <label class="form-label fw-bold" for="startdate">Start Date</label>
+                          <p>{{surveysingle.startdate}}</p>
+                          
+                        </div>
+                    <div class="form-outline form-white mb-4 col">
+                      <label class="form-label fw-bold" for="enddate">End Date</label>
+                      <p>{{surveysingle.enddate}}</p>
+                      
+                     
+                    </div>
+                    
+                    
+                   
+                    
+                    
+  
+                  </div>
+                  <div class="form-outline form-white mb-4 col">
+                    <label class="form-label" for="question1">Email:</label>
+                    <input input formControlName="email" type="email" id="email" class="form-control form-control-lg " />
+
+                    
+                  </div>
+                  <div class="form-outline form-white mb-4 col">
+                    <label class="form-label" for="phno">Phone No:</label>
+                    <input input formControlName="phno" type="number" id="phno" class="form-control form-control-lg " />
+
+                    
+                  </div>
+  
+                  <!-- <div class="row"> -->
+                      <div class="form-outline form-white mb-4 col">
+                          <label class="form-label" for="question1">Question 1: {{surveysingle.question1}}</label>
+                          <input input formControlName="question1" type="text" id="question1" class="form-control form-control-lg" />
+      
+                          
+                        </div>
+                      <div class="form-outline form-white mb-4 col">
+                          <label class="form-label" for="question2">Question 2: {{surveysingle.question2}}</label>
+                          <input input formControlName="question2" type="text" id="question2" class="form-control form-control-lg" />
+                         
+                          
+                        </div>
+  
+                      <div class="form-outline form-white mb-4 col">
+                          <label class="form-label" for="question3">Question 3: {{surveysingle.question3}}</label>
+                          <input input formControlName="question3" type="text" id="question3" class="form-control form-control-lg" />
+                         
+                          
+                        </div>
+  
+                        <div class="form-outline form-white mb-4 col">
+                          <label class="form-label" for="question">Choice Question</label>
+                         
+                          
+                        </div>
+                        <div class="row">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">  choice1                             </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+choice2                                </label>
+                              </div>
+                         
+                          
+                        </div>
+                    <input type="submit" class="btn btn-primary btn-lg px-5 mt-3" value="Submit" [disabled]="!form.valid">
+                  </form>
+                  </div>
+                  </div> 
+                  
+                </div> 
+                
+              </div> 
+         </div>  
+  
+          </div>   
+        </section>

@@ -1,0 +1,34 @@
+<div class="container" style="padding-top: 25px; padding-left:50px ;">
+    <button routerLink="/login" class="btn btn-danger">back</button>
+    <table class="table table-stripped table-bordered">
+      <thead>
+          <tr>
+              <th>Survey Name</th>
+              <th>StartDate</th>
+              <th>EndDate</th>
+              <th>Question 1</th>
+
+              <th>Question 2</th>
+
+              <th>Question 3</th>
+
+
+
+            </tr>
+      </thead> 
+      <tbody>
+          <tr *ngFor="let p of surveylist">
+              <td>{{p.surveyname}}</td>
+              <td>{{p.startdate}}</td>
+              <td>{{p.enddate}}</td>
+              <td>{{p.question1}}</td>
+              <td>{{p.question2}}</td>
+              <td>{{p.question3}}</td>
+
+          </tr>
+      </tbody>
+  </table>
+  
+  
+  
+  </div>         

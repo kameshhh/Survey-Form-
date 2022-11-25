@@ -1,0 +1,45 @@
+<section class="vh-100 gradient-custom"> -->
+    <div class="container py-5 h-100 vh">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 3rem;">
+                    <div class="card-body p-4 text-center">
+                        <div class="mb-md-8 mt-md-3 pb-4">
+                            <img src="../../../../assets/images/admin.jpg" height="100px" width="100px" style="border-radius: 10px;"><br><br>
+
+                            <h3 class="font-size mb-2" style="font-weight: bolder;color: yellow; ">  ADMIN LOGIN </h3> <br>   
+                            <form (ngSubmit)="adminLogin()">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                                          
+                                </div>
+                            <input type="text" class="form-control py-3" placeholder="Enter user name" id="email" name="email" [(ngModel)]="user.email">  
+                            </div>
+                            <br>
+
+
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                                           
+                                </div>
+                            <input type="password" class="form-control py-3" placeholder="Enter password " id="password" name="password" [(ngModel)]="user.password">  
+                            </div>
+        
+                            <br>
+
+                     
+                            <div class="d-grid gap-2  col-2  mx-auto">
+                                
+                                <input type="submit" name="submit" value="LOGIN" class="btn btn-primary" id="button" style="font-size: x-large;" routerLink="/login">                               
+                              </div>  
+                            </form>
+
+                            <!-- <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button> -->
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- </section>
