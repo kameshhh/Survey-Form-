@@ -11,10 +11,10 @@ import { NewUser } from './models/newUser';
   providedIn: 'root'
 })
 export class ServicesService {
-  loginUser(user: User):Observable<object>{
-    console.log(user)
-    return this.httpClient.post("http://localhost:8080/user/userlogin",user);
-  }
+  // loginUser(user: User):Observable<object>{
+  //   console.log(user)
+  //   return this.httpClient.post("http://localhost:8080/user/userlogin",user);
+  // }
   answerSurvey(newsurvey:NewSurvey) :Observable<object>{
     console.log(newsurvey)
     return this.httpClient.post("http://localhost:8080/customeranswers/surveyquestions",newsurvey);
@@ -36,11 +36,11 @@ export class ServicesService {
 
   }
   getsurveylist():Observable<any>{
-    return this.httpClient.get("http://localhost:8080/adminquestions/allsurveys");
+    return this.httpClient.get("http://localhost:8080/choicequestions/allsurveys");
   }
 
   surveyById(id:number):Observable<any>{
-    return this.httpClient.get("http://localhost:8080/adminquestions/survey/"+ id);
+    return this.httpClient.get("http://localhost:8080/choicequestions/chquestion/"+ id);
   }
 
   surveyChoiceById(id:number):Observable<any>{

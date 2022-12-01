@@ -1,4 +1,4 @@
-<section class="vh-100 gradient-custom"> -->
+<section class="vh-100 gradient-custom">
     <div class="container py-5 h-100 vh">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -8,8 +8,8 @@
                             <img src="../../../../assets/images/admin.jpg" height="100px" width="100px" style="border-radius: 10px;"><br><br>
 
                             <h3 class="font-size mb-2" style="font-weight: bolder;color: yellow; ">  ADMIN LOGIN </h3> <br>   
-                            <form (ngSubmit)="adminLogin()">
-                            <div class="input-group mb-2">
+                            <form [formGroup]="form" (ngSubmit)="adminLogin()">
+                            <!-- <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                                           
                                 </div>
@@ -29,9 +29,35 @@
 
                      
                             <div class="d-grid gap-2  col-2  mx-auto">
-                                
-                                <input type="submit" name="submit" value="LOGIN" class="btn btn-primary" id="button" style="font-size: x-large;" routerLink="/login">                               
-                              </div>  
+                                 -->
+
+                                 <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="typeEmailX">Email</label>
+                                    <input formControlName="email"
+                                    type="email" class="form-control form-control-lg" id="email" name="email"  />
+                                    <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                                        <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+                                    </div>
+                            
+                                   
+                                </div>
+    
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="typePasswordX">Password</label>
+    
+                                    <input formControlName="password"
+                                    type="password" id="password" name="password" class="form-control form-control-lg" />
+                                    <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+                                        <div *ngIf="f['password'].errors && f['password'].errors['required']">Body is required.</div>
+                                    </div>
+                            
+                                </div>
+    
+                                <input type="submit" name="submit" value="LOGIN" class="btn btn-primary" id="button" [disabled]="!form.valid" style="font-size: x-large;">                    
+                                <div style="color: red">
+                                    {{errroMessage}}
+                                </div>           
+                              <!-- </div>   -->
                             </form>
 
                             <!-- <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button> -->
@@ -42,4 +68,4 @@
             </div>
         </div>
     </div>
-<!-- </section>
+</section>

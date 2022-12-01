@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { LoginstatusService } from '../loginstatus.service';
 import { User } from '../models/user';
 import { ServicesService } from '../services.service';
+import { UserserviceService } from '../userservice.service';
 // import { UserserviceService } from '../userservice.service';
 
 @Component({
@@ -23,7 +24,7 @@ export class UserloginComponent implements OnInit {
    submitted=false;
    
   constructor(
-    private userService:ServicesService,
+    private userService:UserserviceService,
     private  loginStatus:LoginstatusService,
     private router: Router,
     private formBuilder:FormBuilder) { }
@@ -40,9 +41,8 @@ export class UserloginComponent implements OnInit {
     console.log(this.form.value);
     this.userService.loginUser(this.form.value).subscribe((response) => {
          console.log(response);
-        //  this.loginStatus.changeLoginStatus(true)//changing the value of login status
-        //  this.loginStatus.changeUserStatus(response)//assigning the logged in user details
-        // //  this.router.navigateByUrl('posts');
+         this.loginStatus.changeLoginStatus(true)//changing the value of login status
+         this.loginStatus.changeUserStatus(response)//assigning the logged in user details
          this.router.navigate(['surveypage'])
     },(error)=>{
       console.log('invalid username/password')

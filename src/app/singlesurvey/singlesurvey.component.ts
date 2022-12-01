@@ -47,10 +47,12 @@ export class SinglesurveyComponent implements OnInit {
       console.log(this.surveysingle)
     })
 
-    this.plansService.surveyChoiceById(this.id).subscribe((data:NewSurvey)=>{
-      this.surveysinglechoice=data;
-      console.log(this.surveysinglechoice)
-    })
+
+    // this.id=this.route.snapshot.params['pid'];
+    // this.plansService.surveyChoiceById(this.id).subscribe((data:NewSurvey)=>{
+    //   this.surveysinglechoice=data;
+    //   console.log(this.surveysinglechoice)
+    // })
     
 
 

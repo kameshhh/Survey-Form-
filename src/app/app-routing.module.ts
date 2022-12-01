@@ -4,6 +4,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { CreatesurveyComponent } from './createsurvey/createsurvey.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { LogoutComponent } from './logout/logout.component';
 import { SignupuserComponent } from './signupuser/signupuser.component';
 import { SinglesurveyComponent } from './singlesurvey/singlesurvey.component';
 import { SurveylistComponent } from './surveylist/surveylist.component';
@@ -23,6 +24,8 @@ const routes: Routes = [
   {path:'adminlogin/createsurvey',component:CreatesurveyComponent},
   {path:'adminlogin/surveylist', component: SurveylistComponent},
   {path:'survey/:pid/view', component: SinglesurveyComponent},
+  {path:'logout', component:LogoutComponent }
+
   
 ];
 

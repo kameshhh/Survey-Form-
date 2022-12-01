@@ -16,8 +16,9 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { SinglesurveyComponent } from './singlesurvey/singlesurvey.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { SignupuserComponent } from './signupuser/signupuser.component';
-import { UserserviceComponent } from './userservice/userservice.component';
-import { UserserviceDirective } from './userservice.directive';
+import { LogoutComponent } from './logout/logout.component';
+// import { UserserviceComponent } from './userservice/userservice.component';
+// import { UserserviceDirective } from './userservice.directive';
 
 
 
@@ -35,8 +36,9 @@ import { UserserviceDirective } from './userservice.directive';
     SinglesurveyComponent,
     UserloginComponent,
     SignupuserComponent,
-    UserserviceComponent,
-    UserserviceDirective
+    LogoutComponent,
+    // UserserviceComponent,
+    // UserserviceDirective
   ],
   imports: [
     BrowserModule,
