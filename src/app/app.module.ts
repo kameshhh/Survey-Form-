@@ -17,6 +17,9 @@ import { SinglesurveyComponent } from './singlesurvey/singlesurvey.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { SignupuserComponent } from './signupuser/signupuser.component';
 import { LogoutComponent } from './logout/logout.component';
+import { CreatequestionsComponent } from './createquestions/createquestions.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
+import { UserlistComponent } from './userlist/userlist.component';
 // import { UserserviceComponent } from './userservice/userservice.component';
 // import { UserserviceDirective } from './userservice.directive';
 
@@ -37,6 +40,9 @@ import { LogoutComponent } from './logout/logout.component';
     UserloginComponent,
     SignupuserComponent,
     LogoutComponent,
+    CreatequestionsComponent,
+    ThankyouComponent,
+    UserlistComponent,
     // UserserviceComponent,
     // UserserviceDirective
   ],

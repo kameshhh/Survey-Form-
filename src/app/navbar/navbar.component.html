@@ -2,14 +2,14 @@
   <div class="text-center">
     <img src="../../assets/images/survey_logo.png" routerLink="/" class="d-block" style="height: 5rem; width: 9rem;   margin-left: 10px ; cursor: pointer;"
     alt="...">
-
+    
 
   </div>
 
   <a class="btn btn-warning btn-lg px-4 " style="margin-left: 70%;"  routerLink="/adminlogin">Admin Login</a>
 
-  <a  class="btn btn-danger btn-lg px-4  mx-2" aria-current="page" routerLink="/userlogin" *ngIf="!loginStatus" >Login</a>
-  <a  class="btn btn-danger btn-lg px-4  mx-2" aria-current="page" routerLink="/logout" *ngIf="loginStatus" >logout</a>
+  <a  class="btn btn-danger btn-lg px-4  mx-2 " aria-current="page" routerLink="/userlogin" *ngIf="!loginStatus" style="border:1px solid black; " >Login</a>
+  <a  class="btn btn-danger btn-lg px-4  mx-2" aria-current="page" routerLink="/logout" *ngIf="loginStatus" style="border:1px solid black; ">logout</a>
     
   
     

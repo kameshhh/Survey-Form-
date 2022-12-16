@@ -1,0 +1,36 @@
+
+<section class="vh-100 gradient-custom" style="background-color: #EFF5F5;">
+<div class="container" style="padding-top: 25px; width: 50%;">
+       <table class="table table-hover " style="background-color: #faeab1e5;  border-radius: 20px; box-shadow:0 2px 8px 0 rgba(0, 0, 0, 0.267); font-family: monospace; font-weight:800;"  >
+      <thead>
+          <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Email</th>
+              <th >Actions</th>
+              <!-- <th>Button</th> -->
+
+
+
+            </tr>
+      </thead> 
+      <tbody>
+          <tr *ngFor="let p of userlist">
+              <td>{{p.firstname}}</td>
+              <td>{{p.lastname}}</td>
+              <td>{{p.email}}</td>
+              <td>    <button [routerLink]="['/createquestion',p.id,'view']" class="btn btn-warning">Edit </button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-danger" (click)="deleteUser(p.id)">Delete</button>
+              </td>
+
+
+          </tr>
+      </tbody>
+  </table>
+  
+  
+  
+  </div> 
+  </section>        

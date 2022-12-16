@@ -9,133 +9,75 @@
           <div class="card-body p-5 text-center">
             <div class="mb-md-1 mt-md-4 pb-2">
               <h2 class="fw-bold mb-1 text-uppercase">Survey Form</h2>
-              <form form [formGroup]="form" (ngSubmit)="submitsurvey()">
+              <!-- <form form [formGroup]="form" (ngSubmit)="submitsurvey()">
 
                 <div class="row">
 
                   <div class="form-outline form-white mb-2 mt-3 col">
-                    <label class="form-label" for="firstname">{{surveysingle.surveyname}}</label>
+                    <label class="form-label" for="firstname"></label>
 
 
                   </div>
                 </div>
 
+                <table class="table table-stripped ">
+                  <tbody>
+                      <tr *ngFor="let p of surveysingle">
+                          <td>{{p.question}}</td>
+            
 
-                <!-- Multiple choice -->
-                <div>
-                <div class="row mt-3">
-                  <div class="col-md-12">
-                    <h5>{{surveysingle.question}}</h5>
+                        <td> <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name={{p.id}} id="flexRadioDefault1" ngModel>
+                          <label class="form-check-label" for="flexRadioDefault1">
+                            {{p.choice1}} </label>
+                        </div></td>
+                          <td><div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name={{p.id}} id="flexRadioDefault2">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                              {{p.choice2}} </label>
+                          </div></td>
+                          <td><div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name={{p.id}} id="flexRadioDefault3">
+                            <label class="form-check-label" for="flexRadioDefault3">
+                              {{p.choice3}} </label>
+                          </div></td>
+                          <td><div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name={{p.id}} id="flexRadioDefault4">
+                            <label class="form-check-label" for="flexRadioDefault4">
+                              {{p.choice4}} </label>
+                          </div></td>
+                      </tr>
+                  </tbody>
+              </table>
+              
 
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                      <label class="form-check-label" for="flexRadioDefault1"> {{surveysingle.choice1}}</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        {{surveysingle.choice2}} </label>
-                    </div>
 
 
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        {{surveysingle.choice3}} </label>
-                    </div>
-                    <div class="form-check  form-check-inline">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        {{surveysingle.choice4}} </label>
-                    </div>
+                <input type="submit" class="btn btn-primary btn-lg px-5 " style="margin-top: 10%;" value="Submit">
+              </form> -->
+
+
+              <form #sampleForm="ngForm" (ngSubmit)="Save(sampleForm)">
+                <div class="FormGroup">
+                  <div class="FormControl" *ngFor="let p of surveysingle" >
+                    <h5 class="m-2"  >{{p.question}}</h5>
+                    <label class="inline-radio m-2">
+                      <input type="radio" name={{p.id}} value={{p.choice1}}  ngModel>{{p.choice1}}
+                    </label>
+                    <label class="inline-radio m-2">
+                      <input type="radio" name={{p.id}} value={{p.choice2}}   ngModel>{{p.choice2}}
+                    </label>
+                    <label class="inline-radio m-2">
+                      <input type="radio" name={{p.id}} value={{p.choice3}}   ngModel>{{p.choice3}}
+                    </label>
+                    <label class="inline-radio m-2">
+                      <input type="radio" name={{p.id}} value={{p.choice4}}   ngModel>{{p.choice4}}
+                    </label>
                   </div>
+                  <button  class="btn btn-primary btn-lg px-5 " style="margin-top: 10%;">Submit</button>
                 </div>
-              </div>
-                <div class="row mt-3">
-                  <div class="col-md-12">
-                    <h5>Questuion 2</h5>
-
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1">
-                      <label class="form-check-label" for="flexRadioDefault1"> choice1 </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        choice2 </label>
-                    </div>
-
-
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        choice3 </label>
-                    </div>
-                    <div class="form-check  form-check-inline">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        choice4 </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="row mt-3">
-                  <div class="col-md-12">
-                    <h5>Questuion 3</h5>
-
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault1">
-                      <label class="form-check-label" for="flexRadioDefault1"> choice1 </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        choice2 </label>
-                    </div>
-
-
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        choice3 </label>
-                    </div>
-                    <div class="form-check  form-check-inline">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        choice4 </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="row mt-3">
-                  <div class="col-md-12">
-                    <h5>Questuion 4</h5>
-
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault1">
-                      <label class="form-check-label" for="flexRadioDefault1"> choice1 </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        choice2 </label>
-                    </div>
-
-
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        choice3 </label>
-                    </div>
-                    <div class="form-check  form-check-inline">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        choice4 </label>
-                    </div>
-                  </div>
-                </div>
-                
-
-                <input type="submit" class="btn btn-primary btn-lg px-5 " style="margin-top: 10%;" value="Submit" [disabled]="!form.valid">
               </form>
+              <div>{{sampleForm.value | json}}</div>
             </div>
           </div>
 

@@ -18,4 +18,10 @@ export class SurveylistComponent implements OnInit {
     })
   }
 
+  deleteSurvey(id:number){
+    this.plansService.deleteSurveyById(id).subscribe(res=>{
+      this.surveylist=this.surveylist.filter(survey=>survey.id!==id);
+    })
+  }
+
 }

@@ -26,6 +26,14 @@ export class UserserviceService {
   Adminlogout():Observable<any>{
     return this.httpClient.delete("http://localhost:8080/admin/logout");
   }
+
+  getuserlist():Observable<any>{
+    return this.httpClient.get("http://localhost:8080/user/alluserdetails");
+  }
+
+  deleteUserById(id:number){
+    return this.httpClient.delete("http://localhost:8080/user/delete/"+id);
+  }
   get currentUserName() 
     {
         return this.user.asObservable();

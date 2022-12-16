@@ -1,11 +1,15 @@
-<div class="container" style="padding-top: 25px; padding-left:50px ;">
-    <!-- <button routerLink="/" class="btn btn-danger">back</button> -->
-    <table class="table table-stripped table-bordered">
+
+<section class="vh-100 gradient-custom" style="background-image: url(../../assets/images/survey5.png); background-size: contain;
+background-repeat: no-repeat;">
+<div class="container" style="padding-top: 25px; width: 50%;">
+       <table class="table table-hover " style="background-color: #faeab1e5;  border-radius: 20px; box-shadow:0 2px 8px 0 rgba(0, 0, 0, 0.267); font-family: monospace; font-weight:800;"  >
       <thead>
           <tr>
+              <th>ID</th>
               <th>Survey Name</th>
               <th>StartDate</th>
               <th>EndDate</th>
+              <th >Actions</th>
               <!-- <th>Button</th> -->
 
 
@@ -14,10 +18,11 @@
       </thead> 
       <tbody>
           <tr *ngFor="let p of surveylist">
+              <td>{{p.id}}</td>
               <td>{{p.surveyname}}</td>
               <td>{{p.startdate}}</td>
               <td>{{p.enddate}}</td>
-              <td>    <button [routerLink]="['/survey',p.id,'view']" class="btn btn-danger">Take this survey </button>
+              <td>    <button [routerLink]="['/survey',p.id,'view']" class="btn btn-danger " style="border-radius: 15px;">Take this survey </button>
               </td>
 
           </tr>
@@ -26,4 +31,5 @@
   
   
   
-  </div>         
+  </div> 
+  </section>        
